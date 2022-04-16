@@ -33,6 +33,7 @@ def save_file(filename, data):
 		f.write(data)
 
 def encrypt(plaintext, sheet):
+	
 	ciphertext = ''
 	for position, character in enumerate(plaintext):
 		if character not in ALPHABET:
@@ -78,5 +79,22 @@ def menu():
                 print('[4] Delete all OTP files')
                 print('[5] Quit program')
                 choice = input('Please type the option you want to choose and press Enter >> ')
-		
+		if choice == '1':
+                        sheets = int(input('How many one-time pads would you like to generate? '))
+                        length = int(input('What will be your maximum message length? '))
+                        print('\n'+'>>')
+                        generate_otp(sheets, length)
+                elif choice == '2':
+                        filename = input('Type in the filename of the OTP you want to use (otp__.txt):  ')
+                        dangerfile(filename)
+                        sheet = load_sheet(filename)
+                        plaintext = get_plaintext()
+                        ciphertext = encrypt(plaintext, sheet)
+                        filename = input('What will be the name of the encrypted file?  (enc_.txt):     ')
+                        print('\nCiphertext:')
+                        print('________________________')
+                        print('\n'+ciphertext)
+                        print('________________________')
+                        print('\n'+'>>')
+                        save_file(filename, ciphertext)
 menu()
