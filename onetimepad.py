@@ -54,3 +54,29 @@ def decrypt(ciphertext, sheet):
 
 def dangerfile(filename):  
     return filename
+
+def menu():
+        password = 'admin'
+        inp = str ( getpass.getpass('Enter the password: ') )
+        if inp == password:
+                print ('-----------------------')
+                print ('welcome to the program')
+                print ('-----------------------')
+        else:
+                print ('Wrong Password...\n')
+                print ('Please try again later...')
+                time.sleep(3)
+                exit()
+                        
+        choices = ['1', '2', '3', '4' , '5']
+        choice = '0'
+        while choice not in choices:
+                print('What would you like to do?')
+                print('[1] Generate OTP')
+                print('[2] Encrypt a message')
+                print('[3] Decrypt a message')
+                print('[4] Delete all OTP files')
+                print('[5] Quit program')
+                choice = input('Please type the option you want to choose and press Enter >> ')
+		
+menu()
