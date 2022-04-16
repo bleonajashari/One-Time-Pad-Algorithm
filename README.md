@@ -1,12 +1,12 @@
 # One-Time-Pad-Algorithm
 This work is a simple implementation of the One Time Pad algorithm written in Python.
 
-One Time Pad algorithm also known as Vernam Cipher, is a method of encrypting alphabetic plain text. It is one of the substitution techniques which converts plain text into ciphertex, meaning we assign a number to each character of the plaintext.
+One Time Pad algorithm also known as Vernam Cipher, is a method of encrypting alphabetic plaintext. It is one of the substitution techniques which converts plaintext into ciphertext, meaning we assign a number to each character of the plaintext.
 
 ![otp](https://user-images.githubusercontent.com/93947087/163680487-bb76cffa-424c-49be-8fa9-69996b6b7fc6.png)
 
 Relation between the key and plain text: 
-In this algorithm, the length of the key should be equal to that of plain text.
+In this algorithm, the length of the key should be equal to that of the plain text.
 
 When using an OTP, a string of random numbers is generated and shared between two or more individuals who want to communicate securely. Each letter of the message is then shifted by the corresponding number within the OTP, so each letter has its own individual key.
 
