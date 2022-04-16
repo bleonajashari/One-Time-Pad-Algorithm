@@ -97,4 +97,31 @@ def menu():
                         print('________________________')
                         print('\n'+'>>')
                         save_file(filename, ciphertext)
+			elif choice == '3':
+                        filename = input('Type in the file name of the OTP you want to use (otp_.txt):  ')
+                        sheet = loadsheet(filename)
+                        filename = input('Type in the name of the file to be decrypted  (enc.txt):     ')
+                        ciphertext = load_file(filename)
+                        plaintext = decrypt(ciphertext, sheet)
+                        print('\nPlaintext:')
+                        print('__')
+                        print('\n'+plaintext)
+                        print('__\n'+'>>')
+                elif choice == '4':
+                        inp = str (getpass.getpass('Please enter the password: ') )
+                        if inp == password:
+                                for sheet in range(1000):
+                                        try:
+                                                os.remove("otp" + str(sheet) + ".txt")
+                                        except:
+                                                print('>> ALL OTP files deleting ....')
+                                                time.sleep(2.5)
+                                                exit()
+                        else:
+                                print('Please try again later ...')
+                                time.sleep(2.5)
+                                exit()
+                elif choice == '5':
+                        print('\nQuitting program!')
+                        exit()
 menu()
